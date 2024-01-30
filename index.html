@@ -2,36 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./styles.css">
+  <!-- Scripts -->
+  <script src="./scripts.js" defer></script>
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
-
-  Score
-  Rules
-
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
-<body>
-
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+<body class="container">
+  <main>
+    <header>
+      <div>
+        <p>Rock</p>
+        <p>Paper</p>
+        <p>Scissors</p>
+      </div>
+      <div>
+        <p>Score</p>
+        <p>0</p>
+      </div>
+    </header>
+    <section id="play-area">
+      <h1>Play area placeholder</h1>
+    </section>
+    <section id="round-resolution" class="hidden">
+      <p>You Picked</p>
+      <p>The House Picked</p>
+    </section>
+    <section id="round-complete" class="hidden">
+      <h2>You Win</h2>
+      <h2>You Lose</h2>
+      <button id="play-again-button">Play Again</button>
+    </section>
+    <button id="rules-button">Rules</button>
+  </main>
+  <footer class="attribution">
+    <p>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://patrickdolan.dev/" target="_blank">Patrick Dolan</a>.
+    </p>
+  </footer>
 </body>
 </html>

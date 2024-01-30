@@ -1,0 +1,58 @@
+/* Globals */
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1em 0;
+}
+
+p {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+/* General Layout */
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 1em 0;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Attribution */
+
+.attribution { 
+  font-size: 11px; 
+  text-align: center; 
+}
+
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+}
