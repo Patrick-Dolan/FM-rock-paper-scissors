@@ -18,4 +18,11 @@ describe("Player", () => {
       expect(player.choice).toEqual("rock");
     });
   });
+
+  describe("updateScore", () => {
+    test("should increment the score property by 1", () => {
+      player.updateScore();
+      expect(player.score).toEqual(1);
+    });
+  });
 });

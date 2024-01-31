@@ -7,4 +7,8 @@ export default class Player {
   makeChoice(choice) {
     this.choice = choice;
   }
+
+  updateScore() {
+    this.score++;
+  }
 }
