@@ -1,4 +1,4 @@
-import Player from '../src/js/Player.js';
+import Player from "../src/js/player.js";
 
 describe("Player", () => { 
   test("should create a player object with a name and score property", () => {
