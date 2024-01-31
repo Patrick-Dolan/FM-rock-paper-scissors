@@ -17,7 +17,7 @@ module.exports = {
     new ESLintPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'project-title',
+      title: 'rock-paper-scissors',
       template: './src/index.html',
       inject: 'body'
     })
