@@ -1,3 +1,5 @@
+import "./css/styles.css";
+
 // UI Logic
 function handleShowRulesClick() {
   alert("Rules button clicked!");
