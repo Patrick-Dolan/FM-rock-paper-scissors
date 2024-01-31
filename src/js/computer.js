@@ -10,4 +10,8 @@ export default class Computer {
     const randomIndex = Math.floor(Math.random() * choices.length);
     this.choice = choices[randomIndex];
   }
+
+  updateScore() {
+    this.score++;
+  }
 }

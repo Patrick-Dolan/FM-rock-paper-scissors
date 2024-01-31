@@ -19,4 +19,11 @@ describe("Computer", () => {
       expect(["rock", "paper", "scissors"]).toContain(computer.choice);
     });
   });
+
+  describe("updateScore", () => {
+    test("should increment the score property by 1", () => {
+      computer.updateScore();
+      expect(computer.score).toEqual(1);
+    });
+  });
 });
