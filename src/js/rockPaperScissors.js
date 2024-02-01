@@ -38,4 +38,9 @@ export default class RockPaperScissors {
     if (this.roundWinner === "tie") { return; }
     this.players.find(player => player.name === this.roundWinner).updateScore();
   }
+
+  resetGameRound() {
+    this.players.forEach(player => player.choice = null);
+    this.roundWinner = null;
+  }
 }

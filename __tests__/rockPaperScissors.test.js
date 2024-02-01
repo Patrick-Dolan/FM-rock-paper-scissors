@@ -120,4 +120,16 @@ describe("RockPaperScissors", () => {
       expect(player2.score).toEqual(0);
     });
   });
+
+  describe("resetGameRound", () => {
+    test("should reset the choice and roundWinner properties of both players", () => {
+      rockPaperScissors.players[0].choice = "rock";
+      rockPaperScissors.players[1].choice = "paper";
+      rockPaperScissors.roundWinner = player1.name;
+      rockPaperScissors.resetGameRound();
+      expect(rockPaperScissors.players[0].choice).toEqual(null);
+      expect(rockPaperScissors.players[1].choice).toEqual(null);
+      expect(rockPaperScissors.roundWinner).toEqual(null);
+    });
+  });
 });
