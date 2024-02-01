@@ -10,7 +10,9 @@ export default class RockPaperScissors {
   }
 
   determineWinner() {
-    if (this.players[0].choice === this.players[1].choice) {
+    if (!this.isValidChoice(this.players[0].choice) || !this.isValidChoice(this.players[1].choice)) {
+      return "invalid choice";
+    } else if (this.players[0].choice === this.players[1].choice) {
       return "tie";
     } else if (this.winningCombinations[this.players[0].choice] === this.players[1].choice) {
       return this.players[0].name;

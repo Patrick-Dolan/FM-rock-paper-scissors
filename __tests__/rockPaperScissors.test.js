@@ -50,5 +50,17 @@ describe("RockPaperScissors", () => {
       game.players[1].choice = "rock";
       expect(game.determineWinner()).toEqual("tie");
     });
+
+    test("should return 'invalid choice' if player2's choice is invalid", () => {
+      game.players[0].choice = "rock";
+      game.players[1].choice = "invalid";
+      expect(game.determineWinner()).toEqual("invalid choice");
+    });
+
+    test("should return 'invalid choice' if player1's choice is invalid", () => {
+      game.players[0].choice = "invalid";
+      game.players[1].choice = "rock";
+      expect(game.determineWinner()).toEqual("invalid choice");
+    });
   });
 });
