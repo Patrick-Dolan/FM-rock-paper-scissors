@@ -20,6 +20,7 @@ describe("RockPaperScissors", () => {
       scissors: "paper"
     });
     expect(rockPaperScissors.validChoices).toEqual(["rock", "paper", "scissors"]);
+    expect(rockPaperScissors.currentTurn).toEqual(0);
   });
 
   describe("isValidChoice", () => {
