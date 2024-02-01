@@ -7,6 +7,7 @@ export default class RockPaperScissors {
       scissors: "paper"
     };
     this.validChoices = ["rock", "paper", "scissors"];
+    this.currentTurn = 0;
   }
 
   determineWinner() {
@@ -23,5 +24,9 @@ export default class RockPaperScissors {
 
   isValidChoice(choice) {
     return this.validChoices.includes(choice);
+  }
+
+  handlePlayerTurns() {
+    this.currentTurn = this.currentTurn === 0 ? 1 : 0;
   }
 }
