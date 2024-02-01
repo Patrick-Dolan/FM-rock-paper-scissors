@@ -21,6 +21,7 @@ describe("RockPaperScissors", () => {
     });
     expect(rockPaperScissors.validChoices).toEqual(["rock", "paper", "scissors"]);
     expect(rockPaperScissors.currentTurn).toEqual(0);
+    expect(rockPaperScissors.roundWinner).toEqual(null);
   });
 
   describe("isValidChoice", () => {
@@ -40,10 +41,24 @@ describe("RockPaperScissors", () => {
       expect(rockPaperScissors.determineWinner()).toEqual(player1.name);
     });
 
+    test("should set the roundWinner property to the Player1's name if they win", () => {
+      rockPaperScissors.players[0].choice = "rock";
+      rockPaperScissors.players[1].choice = "scissors";
+      rockPaperScissors.determineWinner();
+      expect(rockPaperScissors.roundWinner).toEqual(player1.name);
+    });
+
     test("should return 'Player2' if Player2's choice beats Player1's choice", () => {
       rockPaperScissors.players[0].choice = "rock";
       rockPaperScissors.players[1].choice = "paper";
       expect(rockPaperScissors.determineWinner()).toEqual(player2.name);
+    });
+
+    test("should set the roundWinner property to the Player2's name if they win", () => {
+      rockPaperScissors.players[0].choice = "rock";
+      rockPaperScissors.players[1].choice = "paper";
+      rockPaperScissors.determineWinner();
+      expect(rockPaperScissors.roundWinner).toEqual(player2.name);
     });
 
     test("should return 'tie' if Player1's choice ties Player2's choice", () => {
@@ -52,13 +67,20 @@ describe("RockPaperScissors", () => {
       expect(rockPaperScissors.determineWinner()).toEqual("tie");
     });
 
+    test("should set the rounderWinner property to 'tie' if the round is a tie", () => {
+      rockPaperScissors.players[0].choice = "rock";
+      rockPaperScissors.players[1].choice = "rock";
+      rockPaperScissors.determineWinner();
+      expect(rockPaperScissors.roundWinner).toEqual("tie");
+    });
+
     test("should return 'invalid choice' if player2's choice is invalid", () => {
       rockPaperScissors.players[0].choice = "rock";
       rockPaperScissors.players[1].choice = "invalid";
       expect(rockPaperScissors.determineWinner()).toEqual("invalid choice");
     });
 
-    test("should return 'invalid choice' if player1's choice is invalid", () => {
+    test("should return 'invalid choice' if Player1's choice is invalid", () => {
       rockPaperScissors.players[0].choice = "invalid";
       rockPaperScissors.players[1].choice = "rock";
       expect(rockPaperScissors.determineWinner()).toEqual("invalid choice");
