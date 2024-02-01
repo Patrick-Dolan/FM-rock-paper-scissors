@@ -22,6 +22,16 @@ describe("RockPaperScissors", () => {
     expect(game.validChoices).toEqual(["rock", "paper", "scissors"]);
   });
 
+  describe("isValidChoice", () => {
+    test("should return true if the choice is valid", () => {
+      expect(game.isValidChoice("rock")).toEqual(true);
+    });
+
+    test("should return false if the choice is invalid", () => {
+      expect(game.isValidChoice(null)).toEqual(false);
+    });
+  });
+
   describe("determineWinner", () => {
     test("should return 'Player1' if Player1's choice beats Player2's choice", () => {
       game.players[0].choice = "rock";

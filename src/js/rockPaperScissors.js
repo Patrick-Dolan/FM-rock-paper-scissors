@@ -18,4 +18,8 @@ export default class RockPaperScissors {
       return this.players[1].name;
     }
   }
+
+  isValidChoice(choice) {
+    return this.validChoices.includes(choice);
+  }
 }
