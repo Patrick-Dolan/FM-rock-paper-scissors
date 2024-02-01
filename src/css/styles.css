@@ -6,12 +6,22 @@
   box-sizing: border-box;
 }
 
+:root {
+  --background-gradient-start: hsl(214, 47%, 23%);
+  --background-gradient-end: hsl(237, 49%, 15%);
+  --text-color: hsl(0, 0%, 100%);
+  --score-text: hsl(229, 64%, 46%);
+  --dark-text: hsl(229, 25%, 31%);
+  --header-outline: hsl(217, 16%, 45%);
+}
+
 body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
   font-family: 'Barlow Semi Condensed', sans-serif;
+  background: radial-gradient(circle at center top, var(--background-gradient-start) 0%, var(--background-gradient-end) 100%);
 }
 
 main {
@@ -30,6 +40,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: 3px solid var(--header-outline);
+  padding: .75em;
+  border-radius: .5em;
 }
 
 button {
@@ -46,6 +59,45 @@ button {
 
 .hidden {
   display: none;
+}
+
+/* Header styles */
+
+#game-label-container p {
+  margin-top: -.5rem;
+  padding-left: .5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.25em;
+  color: var(--text-color);
+}
+
+#game-label-container p:first-child {
+  margin-top: 0;
+}
+
+#score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--text-color);
+  padding: .5em 1.5em;
+  border-radius: .25rem;
+  height: 100%;
+  color: var(--score-text);
+}
+
+#score-label {
+  font-size: .65rem;
+  letter-spacing: .05rem;
+  text-transform: uppercase;
+}
+
+#score-value {
+  margin: -.25rem 0 -.25rem 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark-text);
 }
 
 /* Attribution */
