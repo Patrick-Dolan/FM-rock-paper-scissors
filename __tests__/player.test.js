@@ -10,6 +10,7 @@ describe("Player", () => {
   test("should create a player object with a name and score property", () => {
     expect(player.name).toEqual("John");
     expect(player.score).toEqual(0);
+    expect(player.choice).toEqual(null);
   });
 
   describe("makeChoice", () => { 
