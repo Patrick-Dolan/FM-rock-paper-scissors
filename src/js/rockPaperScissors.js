@@ -33,4 +33,9 @@ export default class RockPaperScissors {
   handlePlayerTurnChange() {
     this.currentTurn = this.currentTurn === 0 ? 1 : 0;
   }
+
+  handleScoreUpdate() {
+    if (this.roundWinner === "tie") { return; }
+    this.players.find(player => player.name === this.roundWinner).updateScore();
+  }
 }

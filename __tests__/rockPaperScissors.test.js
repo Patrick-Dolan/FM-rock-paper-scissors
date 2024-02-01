@@ -99,4 +99,25 @@ describe("RockPaperScissors", () => {
       expect(rockPaperScissors.currentTurn).toEqual(0);
     });
   });
+
+  describe("handleScoreUpdate", () => {
+    test("should increment the score of the Player1 when they win the round", () => {
+      rockPaperScissors.roundWinner = player1.name;
+      rockPaperScissors.handleScoreUpdate();
+      expect(player1.score).toEqual(1);
+    });
+
+    test("should increment the score of the Player2 when they win the round", () => {
+      rockPaperScissors.roundWinner = player2.name;
+      rockPaperScissors.handleScoreUpdate();
+      expect(player2.score).toEqual(1);
+    });
+
+    test("should not increment the score of either player if the round is a tie", () => {
+      rockPaperScissors.roundWinner = "tie";
+      rockPaperScissors.handleScoreUpdate();
+      expect(player1.score).toEqual(0);
+      expect(player2.score).toEqual(0);
+    });
+  });
 });
