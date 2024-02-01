@@ -30,9 +30,7 @@ export default class RockPaperScissors {
     return this.validChoices.includes(choice);
   }
 
-  handlePlayerTurns() {
+  handlePlayerTurnChange() {
     this.currentTurn = this.currentTurn === 0 ? 1 : 0;
   }
-
-  
 }

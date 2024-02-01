@@ -87,15 +87,15 @@ describe("RockPaperScissors", () => {
     });
   });
 
-  describe("handlePlayerTurns", () => {
+  describe("handlePlayerTurnChange", () => {
     test("should switch the currentTurn property to the the second player index", () => {
-      rockPaperScissors.handlePlayerTurns();
+      rockPaperScissors.handlePlayerTurnChange();
       expect(rockPaperScissors.currentTurn).toEqual(1);
     });
 
     test("should switch the currentTurn property to the first player index", () => {
       rockPaperScissors.currentTurn = 1;
-      rockPaperScissors.handlePlayerTurns();
+      rockPaperScissors.handlePlayerTurnChange();
       expect(rockPaperScissors.currentTurn).toEqual(0);
     });
   });
