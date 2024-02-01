@@ -8,4 +8,14 @@ export default class RockPaperScissors {
     };
     this.validChoices = ["rock", "paper", "scissors"];
   }
+
+  determineWinner() {
+    if (this.players[0].choice === this.players[1].choice) {
+      return "tie";
+    } else if (this.winningCombinations[this.players[0].choice] === this.players[1].choice) {
+      return this.players[0].name;
+    } else {
+      return this.players[1].name;
+    }
+  }
 }
